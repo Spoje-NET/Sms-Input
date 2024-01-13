@@ -1,0 +1,6 @@
+sms-input (0.1.0) UNRELEASED; urgency=low
+
+  * Initial release. Closes: #nnnn
+    <nnnn is the bug number of your ITP>
+
+ -- Vítězslav Dvořák <info@vitexsoftware.cz>  Sat, 13 Jan 2024 15:37:23 +0100
