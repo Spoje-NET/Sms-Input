@@ -31,3 +31,5 @@ Read SMS inbox and print messages to stdout a json
 ```
 
 Powered by https://github.com/Spoje-NET/php-hspdev-huaweiapi
+
+See also https://github.com/Spoje-NET/smssend
