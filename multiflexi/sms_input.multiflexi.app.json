@@ -10,7 +10,6 @@
     "requirements": null,
     "ociimage": "docker.io\/vitexsoftware\/sms-input",
     "version": "0.1.0",
-    "code": "",
     "uuid": "627d5a24-6acc-4e33-ae76-9c84fe11781b",
     "environment": {
         "MODEM_IP": {
