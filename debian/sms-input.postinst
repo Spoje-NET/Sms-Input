@@ -1,6 +1,8 @@
 #!/bin/sh
 set -e
 
+debian-composer sms-input
+
 case "$1" in
     configure)
     ;;

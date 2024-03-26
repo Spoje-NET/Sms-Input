@@ -17,19 +17,19 @@
             "type": "text",
             "description": "IP Address of E5180s-22",
             "defval": "192.168.8.1",
-            "required": 1
+            "required": true
         },
         "MODEM_PASSWORD": {
             "type": "password",
             "description": "Modem user password",
             "defval": "",
-            "required": 1
+            "required": true
         },
         "MODEM_USERNAME": {
             "type": "text",
             "description": "Modem user login",
             "defval": "admin",
-            "required": 0
+            "required": false
         }
     },
     "multiflexi": "1.10.4.0"

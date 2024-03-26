@@ -1,3 +1,5 @@
+![SMS Input](sms-input.svg?raw=true)
+
 # Sms-Input
 E5180s-22 message reader
 
