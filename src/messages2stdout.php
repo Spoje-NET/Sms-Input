@@ -8,7 +8,7 @@ $modem->setAddress(\Ease\Shared::cfg('MODEM_IP', '192.168.8.1'));
 try {
     $modem->login('admin', \Ease\Shared::cfg('MODEM_PASSWORD'));
     $smsCount = $modem->getSmsCount();
-    if ($smsCount->LocalInbox) {
+    if (intval($smsCount->LocalInbox)) {
         $messageData = [];
         foreach ($modem->getMessages($smsCount->LocalInbox) as $message) {
             $modem->deleteSms($message->getData()['index']);
