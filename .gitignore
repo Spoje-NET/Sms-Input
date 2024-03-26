@@ -12,3 +12,8 @@ composer.phar
 /debian/debhelper-build-stamp
 /.vscode/
 /nbproject/
+/debian/multiflexi-sms-input.substvars
+/debian/multiflexi-sms-input/
+/debian/sms-input.debhelper.log
+/debian/multiflexi-sms-input.debhelper.log
+/debian/tmp/

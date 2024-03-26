@@ -7,3 +7,13 @@
 
 %:
 	dh $@
+
+override_dh_install:
+	mkdir -p debian/tmp
+	jq '.version = "'`dpkg-parsechangelog | sed -n 's/^Version: //p'| sed 's/~.*//'`'"'  debian/composer.json |sponge debian/tmp/composer.json
+	dh_install
+	sed -i -e 's/\.\.\/vendor/\/var\/lib\/composer\/sms-input/g'   debian/sms-input/usr/lib/sms-input/*.php
+	sed -i -e 's/\.\.\/.env//'                                     debian/sms-input/usr/lib/sms-input/*.php
+	sed -i -e 's/\.\.\/i18n/\/usr\/share\/locale/g'                debian/sms-input/usr/lib/sms-input/*.php
+	jq '.version = "'`dpkg-parsechangelog | sed -n 's/^Version: //p'| sed 's/~.*//'`'"'  debian/multiflexi-sms-input/usr/lib/sms-input/multiflexi/price_fixer.multiflexi.app.json | sponge debian/multiflexi-sms-input/usr/lib/sms-input/multiflexi/price_fixer.multiflexi.app.json
+

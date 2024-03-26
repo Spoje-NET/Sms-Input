@@ -1,0 +1,4 @@
+bin/*     			/usr/bin
+src/*.php 			/usr/lib/sms-input/
+src/SpojeNet/SmsInput/*.php 	/usr/lib/sms-input/sms-input/
+debian/tmp/composer.json    	/usr/lib/sms-input/

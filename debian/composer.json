@@ -1,0 +1,37 @@
+{
+    "name": "spojenet/sms-input",
+    "description": "E5180s-22 message reader",
+    "type": "project",
+    "require": {
+        "hsp-dev/huawei-api": "dev-main",
+        "vitexsoftware/ease-core": "dev-main"
+    },
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "SpojeNet\\SmsInput\\": "/usr/lib/sms-input/sms-input/"
+        }
+    },
+    "authors": [
+        {
+            "name": "CyberVitexus",
+            "email": "info@vitexsoftware.cz"
+        }
+    ],
+  "require": {
+    "deb/ease-core": "*",
+    "deb/huaweiapi": "*"
+  },
+  "repositories": [
+    {
+      "type": "path",
+      "url": "/usr/share/php/EaseCore/"
+    },
+    {
+      "type": "path",
+      "url": "/usr/share/php/HuaweiApi/"
+    }
+  ],
+
+    "minimum-stability": "dev"
+}
