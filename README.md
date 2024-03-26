@@ -32,6 +32,37 @@ Read SMS inbox and print messages to stdout a json
 ]
 ```
 
+Installation
+------------
+
+```shell
+sudo apt install lsb-release wget apt-transport-https bzip2
+
+wget -qO- https://repo.vitexsoftware.com/keyring.gpg | sudo tee /etc/apt/trusted.gpg.d/vitexsoftware.gpg
+echo "deb [signed-by=/etc/apt/trusted.gpg.d/vitexsoftware.gpg]  https://repo.vitexsoftware.com  $(lsb_release -sc) main" | sudo tee /etc/apt/sources.list.d/vitexsoftware.list
+sudo apt update
+
+sudo apt install sms-input
+```
+
+Configuration
+-------------
+
+```env
+MODEM_USERNAME=admin
+MODEM_PASSWORD=******
+MODEM_IP=192.168.8.1
+```
+
+Usage
+-----
+
+load config variables into environment or run with path to .env file as argument
+
+```shell
+sms-input /etc/sms.env
+```
+
 Powered by https://github.com/Spoje-NET/php-hspdev-huaweiapi
 
 See also https://github.com/Spoje-NET/smssend
