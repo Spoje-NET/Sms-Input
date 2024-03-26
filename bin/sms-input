@@ -1,2 +1,2 @@
 #!/bin/bash
-php -f /usr/lib/sms-input/messages2stdout.php $@
+php -f /usr/lib/sms-input/messages2stdout.php -- $@

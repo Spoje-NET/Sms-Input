@@ -10,13 +10,13 @@ try {
     $smsCount = $modem->getSmsCount();
     if ($smsCount->LocalInbox) {
         $messageData = [];
-        foreach ($modem->getMessages() as $message) {
+        foreach ($modem->getMessages($smsCount->LocalInbox) as $message) {
             $messageData[] = $message->getData();
         }
         echo json_encode($messageData, \Ease\Shared::cfg('DEBUG') ? JSON_PRETTY_PRINT : 0);
     }
 } catch (\Exception $exc) {
-    $modem->addStatusMessage($modem->getMessage(), 'error');
     $modem->addStatusMessage($exc->getMessage(), 'debug');
+    $modem->addStatusMessage($modem->getStatus(), 'error');
     $status = false;
 }
