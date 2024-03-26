@@ -12,7 +12,7 @@ Vcs-Browser: https://github.com/Spoje-NET/Sms-Input
 Package: sms-input
 Architecture: all
 Multi-Arch: foreign
-Depends: ${misc:Depends}, php-vitexsoftware-ease-core, php-cli, debian-composer, php-hspdev-huaweiapi
+Depends: ${misc:Depends}, php-vitexsoftware-ease-core, php-cli, composer-debian, php-hspdev-huaweiapi
 Description: E5180s-22 message reader
  Read Messages from E5180s-22 modem using API
 
