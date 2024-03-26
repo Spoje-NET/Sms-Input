@@ -11,6 +11,7 @@ try {
     if ($smsCount->LocalInbox) {
         $messageData = [];
         foreach ($modem->getMessages($smsCount->LocalInbox) as $message) {
+            $modem->deleteSms($message->getData()['index']);
             $messageData[] = $message->getData();
         }
         echo json_encode($messageData, \Ease\Shared::cfg('DEBUG') ? JSON_PRETTY_PRINT : 0);
