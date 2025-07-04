@@ -3,16 +3,20 @@
 declare(strict_types=1);
 
 /**
- * Modem Handler
+ * This file is part of the SmsInput package
  *
- * @author     Vítězslav Dvořák <info@vitexsoftware.cz>
- * @copyright  2024 Vitex Software
+ * https://github.com/Spoje-NET/Sms-Input
+ *
+ * (c) SpojeNetIT s.r.o. <http://spojenet.it/>
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
 
 namespace SpojeNet\SmsInput;
 
 /**
- * Description of Modem
+ * Description of Modem.
  *
  * @author vitex
  */
@@ -21,8 +25,6 @@ class Modem extends \HSPDev\HuaweiApi\Router
     use \Ease\Logger\Logging;
 
     /**
-     *
-     *
      * @param int $howMuch
      *
      * @return \SpojeNet\SmsInput\Sms
@@ -31,10 +33,13 @@ class Modem extends \HSPDev\HuaweiApi\Router
     {
         $messages = [];
         $msgResponse = json_decode(json_encode($this->getSms(1, $howMuch)), true);
-        if (array_key_exists('code', $msgResponse)) {
+
+        if (\array_key_exists('code', $msgResponse)) {
             $this->addStatusMessage(self::$errors[(string) $msgResponse['code']], 'warning');
         }
-        $entries = (array_key_exists('Messages', $msgResponse) ? (array_keys($msgResponse['Messages']['Message'])[0] == 0 ? $msgResponse['Messages']['Message'] : [$msgResponse['Messages']['Message']] ) : []);
+
+        $entries = (\array_key_exists('Messages', $msgResponse) ? (array_keys($msgResponse['Messages']['Message'])[0] === 0 ? $msgResponse['Messages']['Message'] : [$msgResponse['Messages']['Message']]) : []);
+
         foreach ($entries as $message) {
             $messages[] = new Sms(
                 $message['Smstat'],
@@ -45,7 +50,7 @@ class Modem extends \HSPDev\HuaweiApi\Router
                 $message['Sca'],
                 $message['SaveType'],
                 $message['Priority'],
-                $message['SmsType']
+                $message['SmsType'],
             );
         }
 

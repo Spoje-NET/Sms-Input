@@ -17,3 +17,4 @@ composer.phar
 /debian/sms-input.debhelper.log
 /debian/multiflexi-sms-input.debhelper.log
 /debian/tmp/
+/.build/
