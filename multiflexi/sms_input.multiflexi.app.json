@@ -1,36 +1,54 @@
 {
-    "image": "",
-    "name": "SMS input",
-    "description": "E5180s-22 SMS to Json reciever",
-    "executable": "sms-input",
-    "setup": "",
-    "cmdparams": "",
-    "deploy": "apt install sms-input",
-    "homepage": "https://github.com/Spoje-NET/Sms-Input",
-    "requirements": [],
-    "ociimage": "docker.io/vitexsoftware/sms-input",
-    "version": "0.1.0",
+    "$schema": "https://raw.githubusercontent.com/VitexSoftware/php-vitexsoftware-multiflexi-core/refs/heads/main/multiflexi.app.schema.json",
+    "schemaVersion": "3.0.0",
     "uuid": "627d5a24-6acc-4e33-ae76-9c84fe11781b",
-    "topics": ["SMS", "Input"],
+    "name": {
+        "en": "SMS input",
+        "cs": "SMS input"
+    },
+    "description": {
+        "en": "E5180s-22 SMS to Json reciever",
+        "cs": "E5180s-22 SMS to Json reciever"
+    },
+    "version": "0.1.0",
+    "tags": [
+        "SMS",
+        "Input"
+    ],
+    "homepage": "https://github.com/Spoje-NET/Sms-Input",
+    "image": "",
+    "ociimage": "docker.io/vitexsoftware/sms-input",
+    "executable": "sms-input",
     "environment": {
         "MODEM_IP": {
             "type": "text",
-            "description": "IP Address of E5180s-22",
+            "description": {
+                "en": "IP Address of E5180s-22",
+                "cs": "IP Address of E5180s-22"
+            },
             "defval": "192.168.8.1",
-            "required": true
+            "required": true,
+            "category": "Other"
         },
         "MODEM_PASSWORD": {
             "type": "password",
-            "description": "Modem user password",
+            "description": {
+                "en": "Modem user password",
+                "cs": "Modem user password"
+            },
             "defval": "",
-            "required": true
+            "required": true,
+            "category": "Security"
         },
         "MODEM_USERNAME": {
             "type": "text",
-            "description": "Modem user login",
+            "description": {
+                "en": "Modem user login",
+                "cs": "Modem user login"
+            },
             "defval": "admin",
-            "required": false
+            "required": false,
+            "category": "Other"
         }
-    },
-    "multiflexi": "1.10.4.0"
+    }
 }
