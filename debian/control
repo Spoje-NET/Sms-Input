@@ -17,7 +17,7 @@ Description: E5180s-22 message reader
  Read Messages from E5180s-22 modem using API
 
 Package: multiflexi-sms-input
-Depends: sms-input, multiflexi
+Depends: sms-input, multiflexi-cli
 Architecture: all
 Section: web
 Priority: optional
