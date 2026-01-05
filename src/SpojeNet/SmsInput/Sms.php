@@ -20,13 +20,12 @@ namespace SpojeNet\SmsInput;
  *
  * @author vitex
  */
-class Sms extends \Ease\Brick
+class Sms extends \Ease\Brick implements \Stringable
 {
     public $smstat;
     public $index;
     public $phone;
     public $content;
-
     public \DateTime $date;
     public $sca;
     public $saveType;

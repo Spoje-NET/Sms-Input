@@ -1,54 +1,54 @@
 {
-    "$schema": "https://raw.githubusercontent.com/VitexSoftware/php-vitexsoftware-multiflexi-core/refs/heads/main/multiflexi.app.schema.json",
-    "schemaVersion": "3.1.0",
-    "uuid": "627d5a24-6acc-4e33-ae76-9c84fe11781b",
-    "name": {
-        "en": "SMS input",
-        "cs": "SMS vstup"
+  "$schema": "https://raw.githubusercontent.com/VitexSoftware/php-vitexsoftware-multiflexi-core/refs/heads/main/multiflexi.app.schema.json",
+  "schemaVersion": "3.2.1",
+  "uuid": "627d5a24-6acc-4e33-ae76-9c84fe11781b",
+  "name": {
+    "en": "SMS input",
+    "cs": "SMS vstup"
+  },
+  "description": {
+    "en": "E5180s-22 SMS to Json receiver",
+    "cs": "E5180s-22 SMS do Json přijímač"
+  },
+  "version": "0.1.0",
+  "tags": [
+    "SMS",
+    "Input"
+  ],
+  "homepage": "https://github.com/Spoje-NET/Sms-Input",
+  "image": "",
+  "ociimage": "docker.io/vitexsoftware/sms-input",
+  "executable": "sms-input",
+  "environment": {
+    "MODEM_IP": {
+      "type": "string",
+      "description": {
+        "en": "IP Address of E5180s-22",
+        "cs": "IP adresa E5180s-22"
+      },
+      "defval": "192.168.8.1",
+      "required": true,
+      "category": "Other"
     },
-    "description": {
-        "en": "E5180s-22 SMS to Json receiver",
-        "cs": "E5180s-22 SMS do Json přijímač"
+    "MODEM_PASSWORD": {
+      "type": "password",
+      "description": {
+        "en": "Modem user password",
+        "cs": "Heslo uživatele modemu"
+      },
+      "defval": "",
+      "required": true,
+      "category": "Security"
     },
-    "version": "0.1.0",
-    "tags": [
-        "SMS",
-        "Input"
-    ],
-    "homepage": "https://github.com/Spoje-NET/Sms-Input",
-    "image": "",
-    "ociimage": "docker.io/vitexsoftware/sms-input",
-    "executable": "sms-input",
-    "environment": {
-        "MODEM_IP": {
-            "type": "text",
-            "description": {
-                "en": "IP Address of E5180s-22",
-                "cs": "IP adresa E5180s-22"
-            },
-            "defval": "192.168.8.1",
-            "required": true,
-            "category": "Other"
-        },
-        "MODEM_PASSWORD": {
-            "type": "password",
-            "description": {
-                "en": "Modem user password",
-                "cs": "Heslo uživatele modemu"
-            },
-            "defval": "",
-            "required": true,
-            "category": "Security"
-        },
-        "MODEM_USERNAME": {
-            "type": "text",
-            "description": {
-                "en": "Modem user login",
-                "cs": "Uživatelské jméno modemu"
-            },
-            "defval": "admin",
-            "required": false,
-            "category": "Other"
-        }
+    "MODEM_USERNAME": {
+      "type": "string",
+      "description": {
+        "en": "Modem user login",
+        "cs": "Uživatelské jméno modemu"
+      },
+      "defval": "admin",
+      "required": false,
+      "category": "Other"
     }
+  }
 }
