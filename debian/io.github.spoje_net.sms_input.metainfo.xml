@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="console-application">
+  <id>io.github.spoje_net.sms_input</id>
+  <metadata_license>MIT</metadata_license>
+  <project_license>MIT</project_license>
+  <name>sms-input</name>
+  <summary>E5180s-22 message reader</summary>
+  <description>
+    <p>
+      Read Messages from E5180s-22 modem using API Bundle E5180s-22 message reader using MultiFlexi
+    </p>
+  </description>
+  <categories>
+    <category>System</category>
+    <category>ConsoleOnly</category>
+  </categories>
+  <url type="homepage">https://github.com/Spoje-NET/Sms-Input</url>
+  <url type="bugtracker">https://github.com/Spoje-NET/Sms-Input/issues</url>
+  <developer id="io.github.spoje_net">
+    <name>Spoje.Net</name>
+  </developer>
+  <provides>
+    <binary>sms-input</binary>
+  </provides>
+  <content_rating type="oars-1.1"/>
+</component>
