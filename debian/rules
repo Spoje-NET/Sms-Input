@@ -1,18 +1,24 @@
 #!/usr/bin/make -f
-# You must remove unused comment lines for the released package.
-#export DH_VERBOSE = 1
-#export DEB_BUILD_MAINT_OPTIONS = hardening=+all
-#export DEB_CFLAGS_MAINT_APPEND  = -Wall -pedantic
-#export DEB_LDFLAGS_MAINT_APPEND = -Wl,--as-needed
+
+PKG_VERSION := $(shell dpkg-parsechangelog -S Version | sed 's/~.*//')
+PKG_SOURCE  := $(shell jq -r '.name' composer.json)
 
 %:
 	dh $@
 
 override_dh_install:
-	mkdir -p debian/tmp
-	jq '.version = "'`dpkg-parsechangelog | sed -n 's/^Version: //p'| sed 's/~.*//'`'"'  debian/composer.json |sponge debian/tmp/composer.json
 	dh_install
-	sed -i -e 's/\.\.\/vendor/\/var\/lib\/composer\/sms-input/g'   debian/sms-input/usr/lib/sms-input/*.php
+	install -m 644 debian/autoload.php debian/sms-input/usr/lib/sms-input/autoload.php
+	sed -i "s|require_once '../vendor/autoload.php'|require_once '/usr/lib/sms-input/autoload.php'|" \
+	    debian/sms-input/usr/lib/sms-input/messages2stdout.php
 	sed -i -e 's/\.\.\/.env//'                                     debian/sms-input/usr/lib/sms-input/*.php
 	sed -i -e 's/\.\.\/i18n/\/usr\/share\/locale/g'                debian/sms-input/usr/lib/sms-input/*.php
-	jq '.version = "'`dpkg-parsechangelog | sed -n 's/^Version: //p'| sed 's/~.*//'`'"'  debian/multiflexi-sms-input/usr/lib/sms-input/multiflexi/sms_input.multiflexi.app.json | sponge debian/multiflexi-sms-input/usr/lib/sms-input/multiflexi/sms_input.multiflexi.app.json
+	sed -i "1a defined('APP_NAME') || define('APP_NAME', '$(PKG_SOURCE)');" \
+	    debian/sms-input/usr/lib/sms-input/autoload.php
+	sed -i "s|'unknown'|'$(PKG_SOURCE)'|" \
+	    debian/sms-input/usr/lib/sms-input/autoload.php
+	sed -i "s|'0.0.0'|'$(PKG_VERSION)'|" \
+	    debian/sms-input/usr/lib/sms-input/autoload.php
+	sed -i "2a defined('APP_VERSION') || define('APP_VERSION', '$(PKG_VERSION)');" \
+	    debian/sms-input/usr/lib/sms-input/autoload.php
+	jq '.version = "'$(PKG_VERSION)'"' debian/multiflexi-sms-input/usr/lib/sms-input/multiflexi/sms_input.multiflexi.app.json | sponge debian/multiflexi-sms-input/usr/lib/sms-input/multiflexi/sms_input.multiflexi.app.json
