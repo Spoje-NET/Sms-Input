@@ -5,6 +5,7 @@
   <project_license>MIT</project_license>
   <name>sms-input</name>
   <summary>E5180s-22 message reader</summary>
+  <icon type="stock">sms-input</icon>
   <description>
     <p>
       Read Messages from E5180s-22 modem using API Bundle E5180s-22 message reader using MultiFlexi
