@@ -3,8 +3,8 @@
     "description": "E5180s-22 message reader",
     "type": "project",
     "require": {
-        "hsp-dev/huawei-api": "dev-main",
-        "vitexsoftware/ease-core": "dev-main"
+        "vitexsoftware/ease-core": "*",
+        "deb/huaweiapi": "*"
     },
     "license": "MIT",
     "autoload": {
@@ -18,20 +18,15 @@
             "email": "info@vitexsoftware.cz"
         }
     ],
-  "require": {
-    "deb/ease-core": "*",
-    "deb/huaweiapi": "*"
-  },
-  "repositories": [
-    {
-      "type": "path",
-      "url": "/usr/share/php/EaseCore/"
-    },
-    {
-      "type": "path",
-      "url": "/usr/share/php/HuaweiApi/"
-    }
-  ],
-
+    "repositories": [
+        {
+            "type": "path",
+            "url": "/usr/share/php/Ease/"
+        },
+        {
+            "type": "path",
+            "url": "/usr/share/php/HuaweiApi/"
+        }
+    ],
     "minimum-stability": "dev"
 }
