@@ -1,6 +1,8 @@
 sms-input (0.1.3) UNRELEASED; urgency=medium
 
   * multiflexi definition update
+  * drop composer-debian dependency: replace with static autoload.php
+  * remove debian/composer.json (no longer needed)
 
  -- vitex <info@vitexsoftware.cz>  Fri, 04 Jul 2025 20:36:19 +0200
 
