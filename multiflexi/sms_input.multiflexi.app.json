@@ -1,6 +1,6 @@
 {
   "$schema": "https://raw.githubusercontent.com/VitexSoftware/php-vitexsoftware-multiflexi-core/refs/heads/main/multiflexi.app.schema.json",
-  "schemaVersion": "3.2.1",
+  "schemaVersion": "3.4.0",
   "uuid": "627d5a24-6acc-4e33-ae76-9c84fe11781b",
   "name": {
     "en": "SMS input",
@@ -19,6 +19,13 @@
   "image": "",
   "ociimage": "docker.io/vitexsoftware/sms-input",
   "executable": "sms-input",
+  "events": {
+    "emits": {
+      "sms.received": {
+        "description": "An inbound SMS was received"
+      }
+    }
+  },
   "environment": {
     "MODEM_IP": {
       "type": "string",
