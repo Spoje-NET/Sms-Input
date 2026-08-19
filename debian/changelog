@@ -1,10 +1,15 @@
-sms-input (0.1.3) UNRELEASED; urgency=medium
+sms-input (0.1.3) unstable; urgency=medium
 
+  [ vitex ]
   * multiflexi definition update
   * drop composer-debian dependency: replace with static autoload.php
   * remove debian/composer.json (no longer needed)
 
- -- vitex <info@vitexsoftware.cz>  Fri, 04 Jul 2025 20:36:19 +0200
+  [ CyberVitexus ]
+  * ensure empty inbox prints valid JSON and set non-zero exit code on
+    modem errors
+
+ -- vitex <info@vitexsoftware.cz>  Wed, 19 Aug 2026 10:32:02 +0200
 
 sms-input (0.1.2) unstable; urgency=low
 
