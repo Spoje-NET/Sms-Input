@@ -1,4 +1,4 @@
-# WARP.md - Working AI Reference for Sms-Input
+# AGENTS.md - Working AI Reference for Sms-Input
 
 ## Project Overview
 **Type**: PHP Project/Debian Package
