@@ -23,18 +23,18 @@ try {
     $modem->login('admin', \Ease\Shared::cfg('MODEM_PASSWORD'));
     $smsCount = $modem->getSmsCount();
 
-    if ((int) $smsCount->LocalInbox) {
-        $messageData = [];
+    $messageData = [];
 
+    if ((int) $smsCount->LocalInbox) {
         foreach ($modem->getMessages($smsCount->LocalInbox) as $message) {
             $modem->deleteSms($message->getData()['index']);
             $messageData[] = $message->getData();
         }
-
-        echo json_encode($messageData, \Ease\Shared::cfg('DEBUG') ? \JSON_PRETTY_PRINT : 0);
     }
+
+    echo json_encode($messageData, \Ease\Shared::cfg('DEBUG') ? \JSON_PRETTY_PRINT : 0);
 } catch (\Exception $exc) {
     $modem->addStatusMessage($exc->getMessage(), 'debug');
     $modem->addStatusMessage($modem->getStatus(), 'error');
-    $status = false;
+    exit(1);
 }
