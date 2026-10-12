@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "75abc1cbc0dc20602d101cc08a9c2f12",
+    "content-hash": "aecba4c59fd52ee050cd0941c402b880",
     "packages": [
         {
             "name": "hsp-dev/huawei-api",
@@ -2088,11 +2088,11 @@
         },
         {
             "name": "phpstan/phpstan",
-            "version": "2.3.1",
+            "version": "2.3.x-dev",
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/6155239b488e95d26d1ebd95c6b4bb294d7f09db",
-                "reference": "6155239b488e95d26d1ebd95c6b4bb294d7f09db",
+                "url": "https://api.github.com/repos/phpstan/phpstan/zipball/ac4c887468e9dda06e1cf709506e452c1f73c0f8",
+                "reference": "ac4c887468e9dda06e1cf709506e452c1f73c0f8",
                 "shasum": ""
             },
             "require": {
@@ -2101,6 +2101,7 @@
             "conflict": {
                 "phpstan/phpstan-shim": "*"
             },
+            "default-branch": true,
             "bin": [
                 "phpstan",
                 "phpstan.phar"
@@ -2148,26 +2149,26 @@
                     "type": "github"
                 }
             ],
-            "time": "2026-10-08T21:09:11+00:00"
+            "time": "2026-10-12T11:59:01+00:00"
         },
         {
             "name": "phpstan/phpstan-phpunit",
-            "version": "2.0.x-dev",
+            "version": "2.1.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/phpstan/phpstan-phpunit.git",
-                "reference": "203970d1401d7779db2dda0d3bd7b441821ab5b5"
+                "reference": "8d16b8478e523a47f8c02e83bce8981b5b5a3b03"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/phpstan/phpstan-phpunit/zipball/203970d1401d7779db2dda0d3bd7b441821ab5b5",
-                "reference": "203970d1401d7779db2dda0d3bd7b441821ab5b5",
+                "url": "https://api.github.com/repos/phpstan/phpstan-phpunit/zipball/8d16b8478e523a47f8c02e83bce8981b5b5a3b03",
+                "reference": "8d16b8478e523a47f8c02e83bce8981b5b5a3b03",
                 "shasum": ""
             },
             "require": {
                 "phar-io/version": "^3.2",
                 "php": "^7.4 || ^8.0",
-                "phpstan/phpstan": "^2.2.6"
+                "phpstan/phpstan": "^2.3.0"
             },
             "conflict": {
                 "phpunit/phpunit": "<7.0"
@@ -2180,7 +2181,6 @@
                 "phpunit/phpunit": "^9.6",
                 "shipmonk/name-collision-detector": "^2.1"
             },
-            "default-branch": true,
             "type": "phpstan-extension",
             "extra": {
                 "phpstan": {
@@ -2205,9 +2205,9 @@
             ],
             "support": {
                 "issues": "https://github.com/phpstan/phpstan-phpunit/issues",
-                "source": "https://github.com/phpstan/phpstan-phpunit/tree/2.0.x"
+                "source": "https://github.com/phpstan/phpstan-phpunit/tree/2.1.1"
             },
-            "time": "2026-08-17T06:38:09+00:00"
+            "time": "2026-10-06T18:12:32+00:00"
         },
         {
             "name": "phpunit/php-code-coverage",
@@ -6144,8 +6144,7 @@
     "aliases": [],
     "minimum-stability": "dev",
     "stability-flags": {
-        "hsp-dev/huawei-api": 20,
-        "phpstan/phpstan-phpunit": 20
+        "hsp-dev/huawei-api": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
